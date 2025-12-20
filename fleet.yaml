@@ -1,0 +1,7 @@
+# Override slot specs here (merged over fleet/models.py defaults).
+# Example:
+# slots:
+#   uncensored:
+#     repo: your-org/your-abliterated-gguf
+#     file: model-Q5_K_M.gguf
+#     port: 8774

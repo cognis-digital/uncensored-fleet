@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cognis-uncensored-fleet"
+version = "0.3.0"
+description = "Deploy and drive a local multi-model LLM fleet (llama.cpp) with an agent harness, hermes memory, and a one-command CLI"
+authors = [{name = "Cognis Digital", email = "suite@cognis.digital"}]
+license = {text = "LicenseRef-COCL-1.0"}
+requires-python = ">=3.10"
+readme = "README.md"
+keywords = ["llm", "local-llm", "llama.cpp", "agents", "fleet", "uncensored", "cognis-digital"]
+classifiers = ["Development Status :: 4 - Beta", "License :: Other/Proprietary License"]
+
+[project.optional-dependencies]
+hf = ["huggingface_hub>=0.23"]
+hermes = ["cognis-hermes"]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://cognis.digital"
+Repository = "https://github.com/cognis-digital/uncensored-fleet"
+
+[project.scripts]
+fleet = "fleet.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["fleet"]
