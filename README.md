@@ -87,6 +87,19 @@ and falls back to a local SQLite store otherwise. Every task's outcome is recall
 ## Responsible use
 Local, unrestricted models are powerful. Use them lawfully and ethically; you are responsible for what you generate and run.
 
+## How it fits
+
+```mermaid
+flowchart LR
+  U[You / CI / Agent] --> R[uncensored-fleet]
+  R --> O[Outputs & artifacts]
+  R --> M[MCP / JSON]
+  M --> AI[AI agents]
+  R --> S[Cognis Neural Suite]
+```
+
+**Explore the suite →** [🗂️ all tools](https://github.com/cognis-digital/cognis-neural-suite) · [⭐ awesome-cognis](https://github.com/cognis-digital/awesome-cognis) · [🔗 cognis-sources](https://github.com/cognis-digital/cognis-sources)
+
 ## License
 Source-available under the **Cognis Open Collaboration License (COCL) v1.0** — see [LICENSE](LICENSE). Commercial use: licensing@cognis.digital.
 
