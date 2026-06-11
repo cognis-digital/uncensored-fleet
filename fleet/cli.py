@@ -5,7 +5,7 @@ from fleet import __version__
 from fleet.models import resolve
 from fleet import download, serve, harness
 
-BANNER = "  uncensored-fleet — local multi-model LLM fleet + harness (hermes-integrated)"
+BANNER = "  uncensored-fleet — local multi-model LLM fleet + harness (engram-integrated)"
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="fleet", description=BANNER)

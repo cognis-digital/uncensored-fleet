@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "cognis-uncensored-fleet"
 version = "0.3.0"
-description = "Deploy and drive a local multi-model LLM fleet (llama.cpp) with an agent harness, hermes memory, and a one-command CLI"
+description = "Deploy and drive a local multi-model LLM fleet (llama.cpp) with an agent harness, engram memory, and a one-command CLI"
 authors = [{name = "Cognis Digital", email = "suite@cognis.digital"}]
 license = {text = "LicenseRef-COCL-1.0"}
 requires-python = ">=3.10"
@@ -15,7 +15,7 @@ classifiers = ["Development Status :: 4 - Beta", "License :: Other/Proprietary L
 
 [project.optional-dependencies]
 hf = ["huggingface_hub>=0.23"]
-hermes = ["cognis-hermes"]
+engram = ["cognis-engram"]
 dev = ["pytest>=8.0"]
 
 [project.urls]

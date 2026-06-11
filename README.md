@@ -5,7 +5,7 @@
 
 # uncensored-fleet
 
-### Deploy a local multi-model LLM fleet in one command — llama.cpp slots, an agent harness, and [hermes](https://github.com/cognis-digital/hermes) memory.
+### Deploy a local multi-model LLM fleet in one command — llama.cpp slots, an agent harness, and [engram](https://github.com/cognis-digital/engram) memory.
 
 [![License: COCL 1.0](https://img.shields.io/badge/License-COCL%201.0-2b6cb0.svg)](LICENSE) ![Local](https://img.shields.io/badge/runs-100%25%20local-111111) ![llama.cpp](https://img.shields.io/badge/engine-llama.cpp-6b46c1) [![Suite](https://img.shields.io/badge/Cognis-Neural%20Suite-6b46c1.svg)](https://github.com/cognis-digital/cognis-neural-suite)
 
@@ -22,7 +22,7 @@ fleet agent "summarize ./notes and propose next steps"
 ```
 
 ## Contents
-- [Why](#why) · [The fleet](#the-fleet) · [Quick start](#quick-start) · [The harness](#the-harness) · [Hermes memory](#hermes-memory) · [Explore the suite](#explore-the-suite)
+- [Why](#why) · [The fleet](#the-fleet) · [Quick start](#quick-start) · [The harness](#the-harness) · [Engram memory](#engram-memory) · [Explore the suite](#explore-the-suite)
 
 <a name="why"></a>
 ## Why
@@ -67,11 +67,11 @@ A tiny, dependency-free agent loop (`fleet/harness.py`) talks to any slot over t
 OpenAI-compatible endpoint and supports safe tools (`run_bash`, `read_file`, `write_file`) via a simple
 `TOOL::` / `FINAL::` text protocol — model-agnostic, so it works with whatever you load.
 
-<a name="hermes-memory"></a>
-## Hermes memory
+<a name="engram-memory"></a>
+## Engram memory
 
-The harness remembers. It uses the Cognis **[hermes](https://github.com/cognis-digital/hermes)** fork for
-portable, model-agnostic long-term memory when installed (`pip install "cognis-uncensored-fleet[hermes]"`),
+The harness remembers. It uses the Cognis **[engram](https://github.com/cognis-digital/engram)** fork for
+portable, model-agnostic long-term memory when installed (`pip install "cognis-uncensored-fleet[engram]"`),
 and falls back to a local SQLite store otherwise. Every task's outcome is recalled on the next related run.
 
 <a name="explore-the-suite"></a>
@@ -79,7 +79,7 @@ and falls back to a local SQLite store otherwise. Every task's outcome is recall
 
 `uncensored-fleet` is the local-AI backbone of the **[Cognis Neural Suite](https://github.com/cognis-digital/cognis-neural-suite)** (170+ tools). Pair it with:
 
-- 🧠 **[hermes](https://github.com/cognis-digital/hermes)** — model-agnostic agent memory
+- 🧠 **[engram](https://github.com/cognis-digital/engram)** — model-agnostic agent memory
 - 🛠️ **[skills](https://github.com/cognis-digital/skills)** — agent skill registry the harness can load
 - 🤖 **[agentsmith](https://github.com/cognis-digital/agentsmith)** · **[evalbench](https://github.com/cognis-digital/evalbench)** · **[modelroute](https://github.com/cognis-digital/modelroute)** — orchestrate, evaluate, route
 - 📚 **[awesome-cognis](https://github.com/cognis-digital/awesome-cognis)** · **[cognis-sources](https://github.com/cognis-digital/cognis-sources)** — the full index

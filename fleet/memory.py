@@ -1,6 +1,6 @@
-"""Memory bridge — uses the Cognis `hermes` fork if installed, else a tiny sqlite fallback.
+"""Memory bridge — uses the Cognis `engram` fork if installed, else a tiny sqlite fallback.
 
-    pip install cognis-hermes   # the fork: https://github.com/cognis-digital/hermes
+    pip install cognis-engram   # the fork: https://github.com/cognis-digital/engram
 """
 from __future__ import annotations
 import os, sqlite3, time
@@ -19,8 +19,8 @@ class _Fallback:
 
 def get_memory():
     try:
-        import hermes  # the Cognis fork
-        return hermes.Memory()  # type: ignore
+        import engram  # the Cognis fork
+        return engram.Memory()  # type: ignore
     except Exception:
         p = Path(os.environ.get("FLEET_MEMORY", Path.home() / ".cognis-fleet" / "memory.sqlite"))
         p.parent.mkdir(parents=True, exist_ok=True)

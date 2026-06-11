@@ -1,5 +1,5 @@
 """A tiny, model-agnostic agent harness that drives a fleet slot over the
-llama.cpp OpenAI-compatible endpoint, with hermes memory and a few safe tools.
+llama.cpp OpenAI-compatible endpoint, with engram memory and a few safe tools.
 """
 from __future__ import annotations
 import json, subprocess, urllib.request
