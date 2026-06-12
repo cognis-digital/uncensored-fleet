@@ -3,7 +3,7 @@
 Order of preference: huggingface_hub -> `huggingface-cli` -> direct HTTPS via urllib.
 """
 from __future__ import annotations
-import os, shutil, subprocess, sys, urllib.request
+import os, shutil, subprocess, urllib.request
 from pathlib import Path
 from fleet.models import resolve
 

@@ -14,7 +14,7 @@
 </div>
 
 ```bash
-pip install cognis-uncensored-fleet
+pip install "git+https://github.com/cognis-digital/uncensored-fleet.git"
 bash scripts/build-llamacpp.sh     # build the engine (CUDA/Metal/Vulkan auto)
 fleet pull all                     # download the model fleet
 fleet up uncensored                # start the commander slot
