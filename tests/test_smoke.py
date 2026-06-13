@@ -1,4 +1,4 @@
-from fleet.models import resolve, SLOTS
+from fleet.models import resolve
 from fleet import __version__
 
 def test_registry():

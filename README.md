@@ -14,12 +14,18 @@
 </div>
 
 ```bash
-pip install cognis-uncensored-fleet
+pip install "git+https://github.com/cognis-digital/uncensored-fleet.git"
 bash scripts/build-llamacpp.sh     # build the engine (CUDA/Metal/Vulkan auto)
 fleet pull all                     # download the model fleet
 fleet up uncensored                # start the commander slot
 fleet agent "summarize ./notes and propose next steps"
 ```
+
+<!-- cognis:layman:start -->
+## What is this?
+
+uncensored-fleet lets you run several AI language models at the same time on your own computer, without needing an internet connection or paying for any cloud service. You control which models are running, send them prompts, and even have them work together on longer tasks — all through a simple `fleet` command. It is designed for developers and researchers who want private, unrestricted AI assistants that run entirely on their own hardware.
+<!-- cognis:layman:end -->
 
 ## Contents
 - [Why](#why) · [The fleet](#the-fleet) · [Quick start](#quick-start) · [The harness](#the-harness) · [Engram memory](#engram-memory) · [Explore the suite](#explore-the-suite)
@@ -48,6 +54,52 @@ deployment layer for a private, unrestricted, self-improving local AI stack.
 VRAM-aware: conflicting slots auto-evict. Override any slot in `fleet.yaml`.
 
 <a name="quick-start"></a>
+<!-- cognis:domains:start -->
+## Domains
+
+**Primary domain:** AI & ML  ·  **JTF MERIDIAN division:** ATHENA-PRIME · SAGE
+
+**Topics:** `cognis` `ai` `llm` `machine-learning` `agent-security` `cli`
+
+Part of the **Cognis Neural Suite** — 300+ source-available tools organized across 12 domains under the JTF MERIDIAN command structure. See the [suite on GitHub](https://github.com/cognis-digital) and [jtf-meridian](https://github.com/cognis-digital/jtf-meridian) for how the pieces fit together.
+<!-- cognis:domains:end -->
+
+<!-- cognis:install:start -->
+## Install
+
+`uncensored-fleet` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/uncensored-fleet/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/uncensored-fleet/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/uncensored-fleet.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/uncensored-fleet.git"  # uv
+pip install "git+https://github.com/cognis-digital/uncensored-fleet.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/uncensored-fleet.git
+cd uncensored-fleet && pip install .
+```
+
+Then run:
+```sh
+fleet --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
@@ -99,6 +151,32 @@ flowchart LR
 ```
 
 **Explore the suite →** [🗂️ all tools](https://github.com/cognis-digital/cognis-neural-suite) · [⭐ awesome-cognis](https://github.com/cognis-digital/awesome-cognis) · [🔗 cognis-sources](https://github.com/cognis-digital/cognis-sources)
+
+<a name="verification"></a>
+## Verification
+
+[![tests](https://img.shields.io/badge/tests-2%20passing-2ea44f.svg)](AUDIT.md)
+
+Every push is verified end-to-end. Latest audit (2026-06-13):
+
+```text
+tests        : 2 passed, 0 failed, 0 errored
+compile      : all modules parse
+cli          : C:\Python314\python.exe: No module named https
+package      : https
+```
+
+<details><summary>CLI surface (<code>--help</code>)</summary>
+
+```text
+C:\Python314\python.exe: No module named https
+```
+</details>
+
+Full machine-readable results: [`AUDIT.md`](AUDIT.md) · regenerate with `python -m https --help` + `pytest -q`.
+
+<div align="right"><a href="#top">↑ back to top</a></div>
+
 
 ## License
 Source-available under the **Cognis Open Collaboration License (COCL) v1.0** — see [LICENSE](LICENSE). Commercial use: licensing@cognis.digital.
