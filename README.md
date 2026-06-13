@@ -21,6 +21,12 @@ fleet up uncensored                # start the commander slot
 fleet agent "summarize ./notes and propose next steps"
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+uncensored-fleet lets you run several AI language models at the same time on your own computer, without needing an internet connection or paying for any cloud service. You control which models are running, send them prompts, and even have them work together on longer tasks — all through a simple `fleet` command. It is designed for developers and researchers who want private, unrestricted AI assistants that run entirely on their own hardware.
+<!-- cognis:layman:end -->
+
 ## Contents
 - [Why](#why) · [The fleet](#the-fleet) · [Quick start](#quick-start) · [The harness](#the-harness) · [Engram memory](#engram-memory) · [Explore the suite](#explore-the-suite)
 
@@ -48,6 +54,42 @@ deployment layer for a private, unrestricted, self-improving local AI stack.
 VRAM-aware: conflicting slots auto-evict. Override any slot in `fleet.yaml`.
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`uncensored-fleet` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/uncensored-fleet/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/uncensored-fleet/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/uncensored-fleet.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/uncensored-fleet.git"  # uv
+pip install "git+https://github.com/cognis-digital/uncensored-fleet.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/uncensored-fleet.git
+cd uncensored-fleet && pip install .
+```
+
+Then run:
+```sh
+fleet --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
