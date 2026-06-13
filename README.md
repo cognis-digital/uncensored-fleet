@@ -21,6 +21,33 @@ fleet up uncensored                # start the commander slot
 fleet agent "summarize ./notes and propose next steps"
 ```
 
+## Usage — step by step
+
+1. **Install** the `fleet` command, then build llama.cpp + pull models (`setup` prints the platform script to run first):
+   ```bash
+   pip install -e .
+   fleet setup
+   ```
+2. **List the slots** to see each model, its port, VRAM and role:
+   ```bash
+   fleet models
+   ```
+3. **Pull and start** a slot (use `all` for the whole fleet), then check it's serving:
+   ```bash
+   fleet pull all
+   fleet up uncensored
+   fleet status
+   ```
+4. **Use the fleet** — send a one-shot prompt to a slot, or run the agent harness on a task (`--slot` defaults to `uncensored`):
+   ```bash
+   fleet run uncensored "summarize this repo"
+   fleet agent "scaffold a fizzbuzz module with tests" --slot coding
+   ```
+5. **Tear down** when finished (omit the slot to stop all):
+   ```bash
+   fleet down
+   ```
+
 ## Contents
 - [Why](#why) · [The fleet](#the-fleet) · [Quick start](#quick-start) · [The harness](#the-harness) · [Engram memory](#engram-memory) · [Explore the suite](#explore-the-suite)
 
