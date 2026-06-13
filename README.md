@@ -127,6 +127,12 @@ flowchart LR
 
 **Explore the suite →** [🗂️ all tools](https://github.com/cognis-digital/cognis-neural-suite) · [⭐ awesome-cognis](https://github.com/cognis-digital/awesome-cognis) · [🔗 cognis-sources](https://github.com/cognis-digital/cognis-sources)
 
+## Interoperability
+
+`{}` composes with the 300+ tool Cognis suite — JSON in/out and a shared
+OpenAI-compatible `/v1` backbone. See **[INTEROP.md](INTEROP.md)** for the
+suite map, composition patterns, and reference stacks.
+
 ## License
 Source-available under the **Cognis Open Collaboration License (COCL) v1.0** — see [LICENSE](LICENSE). Commercial use: licensing@cognis.digital.
 
