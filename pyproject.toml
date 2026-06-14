@@ -29,3 +29,6 @@ fleet = "fleet.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["fleet"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
