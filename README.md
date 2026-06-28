@@ -21,6 +21,52 @@ fleet up uncensored                # start the commander slot
 fleet agent "summarize ./notes and propose next steps"
 ```
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ uncensored-fleet-emit --version
+uncensored-fleet 0.3.0
+```
+
+```console
+$ uncensored-fleet-emit --help
+usage: fleet [-h] [--version] {models,pull,up,down,status,setup,run,agent} ...
+
+uncensored-fleet — local multi-model LLM fleet + harness (engram-integrated)
+
+positional arguments:
+  {models,pull,up,down,status,setup,run,agent}
+    models              list fleet slots
+    pull                download a slot's model (or 'all')
+    up                  start a slot (or 'all')
+    down                stop a slot (or all)
+    status              show fleet status
+    setup               install llama.cpp + pull all models
+    run                 one-shot prompt to a slot
+    agent               run the agent harness on a task
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+```
+
+```console
+$ uncensored-fleet-emit status
+reasoning    :8771  down  planning, analysis, chain-of-thought
+  math         :8772  down  math, SymPy-verifiable problems
+  coding       :8773  down  code generation + edits
+  vision       :8775  down  image understanding / OCR
+  uncensored   :8774  UP    lead/commander, unrestricted local reasoning
+```
+
+> Blocks above are real `uncensored-fleet` output — reproduce them from a clone.
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 1. **Install** the `fleet` command, then build llama.cpp + pull models (`setup` prints the platform script to run first):

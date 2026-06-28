@@ -1,0 +1,7 @@
+$ uncensored-fleet-emit status
+
+reasoning    :8771  down  planning, analysis, chain-of-thought
+  math         :8772  down  math, SymPy-verifiable problems
+  coding       :8773  down  code generation + edits
+  vision       :8775  down  image understanding / OCR
+  uncensored   :8774  UP    lead/commander, unrestricted local reasoning
