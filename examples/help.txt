@@ -1,17 +1,19 @@
-$ uncensored-fleet-emit --help
+$ fleet --help
 
-usage: fleet [-h] [--version] {models,pull,up,down,status,setup,run,agent} ...
+usage: fleet [-h] [--version]
+             {models,pull,up,down,status,setup,doctor,run,agent} ...
 
 uncensored-fleet — local multi-model LLM fleet + harness (engram-integrated)
 
 positional arguments:
-  {models,pull,up,down,status,setup,run,agent}
+  {models,pull,up,down,status,setup,doctor,run,agent}
     models              list fleet slots
     pull                download a slot's model (or 'all')
     up                  start a slot (or 'all')
     down                stop a slot (or all)
     status              show fleet status
     setup               install llama.cpp + pull all models
+    doctor              diagnose the local environment
     run                 one-shot prompt to a slot
     agent               run the agent harness on a task
 

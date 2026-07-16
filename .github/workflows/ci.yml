@@ -3,19 +3,44 @@ on: [push, pull_request]
 permissions:
   contents: read
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install ruff
+        run: python -m pip install --upgrade pip ruff
+      - name: "Lint (error-level: pyflakes + syntax)"
+        run: ruff check --select E9,F fleet livesearch.py tests
+
+  test:
+    needs: lint
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+        include:
+          - os: macos-latest
+            python-version: "3.12"
+          - os: windows-latest
+            python-version: "3.12"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
       - name: Install
         run: |
           python -m pip install --upgrade pip
           pip install -e ".[dev]" || pip install -e . || pip install pytest
       - name: Test
         shell: bash
+        env:
+          PYTHONUTF8: "1"
         run: |
           if compgen -G "tests/*.py" > /dev/null; then
             python -m pytest -q
