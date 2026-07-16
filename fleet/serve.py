@@ -59,7 +59,7 @@ def down(slot=None):
     _save(st)
 
 def status(overrides=None):
-    spec = resolve(overrides); st = _load()
+    spec = resolve(overrides)
     rows = []
     for slot, s in spec.items():
         rows.append((slot, s["port"], "UP" if _port_up(s["port"]) else "down", s["role"]))

@@ -39,6 +39,13 @@ SLOTS = {
 SLOT_CONFLICTS = {"uncensored": ["reasoning"], "reasoning": ["uncensored"]}
 
 def resolve(overrides: dict | None = None) -> dict:
+    """Return a deep copy of the slot registry with ``overrides`` merged in.
+
+    ``overrides`` maps ``slot -> {field: value}`` (typically from ``fleet.yaml``
+    via :func:`fleet.config.load_overrides`). Each override is shallow-merged onto
+    the matching slot; unknown slots are added. The module-level :data:`SLOTS` is
+    never mutated, so ``resolve()`` with no arguments always yields the defaults.
+    """
     import copy
     s = copy.deepcopy(SLOTS)
     for slot, ov in (overrides or {}).items():

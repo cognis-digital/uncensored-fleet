@@ -17,7 +17,7 @@ classifiers = ["Development Status :: 4 - Beta", "License :: Other/Proprietary L
 connect = ["cognis-connect @ git+https://github.com/cognis-digital/cognis-connect.git"]
 hf = ["huggingface_hub>=0.23"]
 engram = ["cognis-engram"]
-dev = ["pytest>=8.0"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
 
 [project.urls]
 Homepage = "https://cognis.digital"
@@ -32,3 +32,15 @@ packages = ["fleet"]
 
 [tool.hatch.metadata]
 allow-direct-references = true
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+# error-level rules only: real bugs (pyflakes) + syntax, not style churn
+select = ["E9", "F"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
